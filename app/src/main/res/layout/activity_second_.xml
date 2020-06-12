@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout  xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="0dp"
+        android:contentDescription="@string/todo">
+    </ImageView>
+
+    <TextView
+
+        android:id="@+id/tv_summery"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/Details_Movie"
+        android:paddingLeft="20dp"
+        android:layout_below="@id/tv_detail"
+        android:textColor="@color/colorPrimary"/>
+
+    <TextView
+
+        android:id="@+id/tv_director"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tv_dir"
+        android:paddingLeft="20dp"
+        android:text="@string/director_Movie"
+        android:textColor="@color/colorPrimary" />
+
+    <TextView
+        android:id="@+id/tv_detail"
+        android:paddingLeft="10dp"
+
+        android:layout_width="match_parent"
+        android:layout_height="17dp"
+        android:layout_below="@id/imageView4"
+        android:text="Detail :"
+        android:textColor="@color/colorPrimary"
+        />
+
+    <TextView
+        android:id="@+id/tv_dir"
+        android:paddingLeft="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="17dp"
+        android:layout_below="@id/tv_summery"
+        android:text="director :"
+        android:textColor="@color/colorPrimary"
+        />
+
+    <TextView
+        android:id="@+id/tv_year"
+        android:paddingLeft="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="17dp"
+        android:layout_below="@id/tv_director"
+        android:text="Production year :"
+        android:textColor="@color/colorPrimary"
+        />
+
+    <TextView
+
+        android:id="@+id/tv_year_Movie"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tv_year"
+        android:paddingLeft="20dp"
+        android:text="@string/Production_year"
+        android:textColor="@color/colorPrimary" />
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:layout_centerInParent="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+</RelativeLayout >
