@@ -4,57 +4,68 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-public class Adapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
-    private Context context;
-    private String[]items;
+import com.squareup.picasso.Picasso;
 
-    public Adapter(Context context, String[] items) {
-        this.context = context;
-        this.items = items;
+import java.net.PortUnreachableException;
+import java.util.ArrayList;
+
+public class Adapter extends RecyclerView.Adapter<Adapter.ExampleViewHolder> {
+    private Context mContext;
+    private ArrayList<ExampleItems>mExampleList;
+    public Adapter(Context context,ArrayList<ExampleItems> exampleList)
+    {
+        mContext=context;
+        mExampleList=exampleList;
     }
-
-    public Adapter(Adapter adapter) {
-
-    }
-
-
-    class ViewHolder extends RecyclerView.ViewHolder{
-
-        TextView titleMovie;
-
-        public ViewHolder(@NonNull View itemView) {
-            super(itemView);
-
-        }
-
-        void bindView(String movies){
-            titleMovie.setText(movies);
-        }
-    }
-
-
 
     @NonNull
     @Override
-    public RecyclerView.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        LayoutInflater inflater=LayoutInflater.from(context);
-        View v=inflater.inflate(R.layout.items_movie,parent,false);
-        return new ViewHolder(v);
+    public ExampleViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+
+        View v= LayoutInflater.from(mContext).inflate(R.layout.items_movie,parent,false);
+        return new ExampleViewHolder(v);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull ExampleViewHolder holder, int position) {
 
-        ((ViewHolder)holder).bindView(items[position]);
+        ExampleItems currentItem=mExampleList.get(position);
+
+        String imageUrl=currentItem.getImageUrl();
+        String creatorName=currentItem.getCreator();
+        int likeCount=currentItem.getLikes();
+
+        Picasso.with(mContext).load(imageUrl).fit().centerInside().into(holder.mImageView);
+        holder.mTextViewLikes.setText("Like : "+likeCount);
+        holder.mTextViewCreator.setText("original_title : "+creatorName);
+
     }
 
     @Override
     public int getItemCount() {
-        return items.length;
+        return mExampleList.size();
+    }
+
+
+    public class ExampleViewHolder extends RecyclerView.ViewHolder
+    {
+        public ImageView mImageView;
+        public TextView mTextViewCreator;
+        public TextView mTextViewLikes;
+
+        public ExampleViewHolder(@NonNull View itemView) {
+            super( itemView );
+
+            mImageView=itemView.findViewById(R.id.image_view);
+            mTextViewCreator=itemView.findViewById(R.id.text_view_creator);
+            mTextViewLikes=itemView.findViewById(R.id.text_view_like);
+
+        }
     }
 }
