@@ -10,6 +10,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.bumptech.glide.Glide;
 import com.squareup.picasso.Picasso;
 
 import java.net.PortUnreachableException;
@@ -18,6 +19,7 @@ import java.util.ArrayList;
 public class Adapter extends RecyclerView.Adapter<Adapter.ExampleViewHolder> {
     private Context mContext;
     private ArrayList<ExampleItems>mExampleList;
+
     public Adapter(Context context,ArrayList<ExampleItems> exampleList)
     {
         mContext=context;
@@ -41,9 +43,11 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ExampleViewHolder> {
         String creatorName=currentItem.getCreator();
         int likeCount=currentItem.getLikes();
 
-        Picasso.with(mContext).load(imageUrl).fit().centerInside().into(holder.mImageView);
+        holder.mTextViewCreator.setText(creatorName);
         holder.mTextViewLikes.setText("Like : "+likeCount);
-        holder.mTextViewCreator.setText("original_title : "+creatorName);
+
+        //Glide.with(mContext).load(imageUrl).fitCenter().centerInside().into(holder.mImageView);
+        Picasso.with(mContext).load(imageUrl).fit().centerInside().into(holder.mImageView);
 
     }
 
