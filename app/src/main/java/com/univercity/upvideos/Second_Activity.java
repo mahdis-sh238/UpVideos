@@ -2,13 +2,48 @@ package com.univercity.upvideos;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.ImageView;
+import android.widget.TextView;
+
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.JsonObjectRequest;
+import com.squareup.picasso.Picasso;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import static com.univercity.upvideos.MainActivity.EXTRA_CREATOR;
+import static com.univercity.upvideos.MainActivity.EXTRA_Likes;
+import static com.univercity.upvideos.MainActivity.EXTRA_URL;
 
 public class Second_Activity extends AppCompatActivity {
 
-    @Override
+    private RequestQueue mRequestQueue;
+        @Override
     protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_second_);
+        super.onCreate( savedInstanceState );
+        setContentView( R.layout.activity_second_ );
+
+        Intent intent = getIntent();
+        String imageUrl = intent.getStringExtra( EXTRA_URL );
+        String creatorName = intent.getStringExtra( EXTRA_CREATOR );
+        int likeCount = intent.getIntExtra( EXTRA_Likes, 0 );
+
+        ImageView imageView = findViewById( R.id.image_View_Detail );
+        TextView textViewCreator = findViewById( R.id.tv_director );
+        TextView textViewLikes = findViewById( R.id.tv_dir );
+
+        Picasso.with( this ).load( imageUrl ).fit().centerInside().into( imageView );
+        textViewCreator.setText( creatorName );
+        textViewLikes.setText( "like : " + likeCount );
+
+
     }
 }

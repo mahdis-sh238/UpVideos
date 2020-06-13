@@ -7,11 +7,12 @@
     tools:context=".MainActivity">
 
     <ImageView
-        android:id="@+id/imageView4"
+        android:id="@+id/image_View_Detail"
         android:layout_width="match_parent"
         android:layout_height="250dp"
         android:layout_alignParentTop="true"
         android:layout_marginTop="0dp"
+        android:src="@mipmap/ic_launcher"
         android:contentDescription="@string/todo">
     </ImageView>
 
@@ -41,7 +42,7 @@
 
         android:layout_width="match_parent"
         android:layout_height="17dp"
-        android:layout_below="@id/imageView4"
+        android:layout_below="@id/image_View_Detail"
         android:text="Detail :"
         android:textColor="@color/colorPrimary"
         />

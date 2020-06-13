@@ -19,6 +19,18 @@ import java.util.ArrayList;
 public class Adapter extends RecyclerView.Adapter<Adapter.ExampleViewHolder> {
     private Context mContext;
     private ArrayList<ExampleItems>mExampleList;
+    private OnItemClickListener mListener;
+
+    public interface OnItemClickListener
+    {
+        void onItemClick(int position);
+    }
+
+    public void setOnItemClickListener(OnItemClickListener listener)
+    {
+        mListener=listener;
+    }
+
 
     public Adapter(Context context,ArrayList<ExampleItems> exampleList)
     {
@@ -63,12 +75,28 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ExampleViewHolder> {
         public TextView mTextViewCreator;
         public TextView mTextViewLikes;
 
+
         public ExampleViewHolder(@NonNull View itemView) {
             super( itemView );
 
             mImageView=itemView.findViewById(R.id.image_view);
             mTextViewCreator=itemView.findViewById(R.id.text_view_creator);
             mTextViewLikes=itemView.findViewById(R.id.text_view_like);
+
+            itemView.setOnClickListener(new View.OnClickListener(){
+
+                @Override
+                public void onClick(View view) {
+                    if(mListener!=null)
+                    {
+                        int position=getAdapterPosition();
+                        if(position!=RecyclerView.NO_POSITION)
+                        {
+                            mListener.onItemClick(position);
+                        }
+                    }
+                }
+            });
 
         }
     }

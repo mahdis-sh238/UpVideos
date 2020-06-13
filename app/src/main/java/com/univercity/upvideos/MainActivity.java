@@ -1,4 +1,5 @@
 package com.univercity.upvideos;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ProgressBar;
@@ -19,7 +20,11 @@ import org.json.JSONObject;
 
 import java.util.ArrayList;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements Adapter.OnItemClickListener {
+
+    public static final String EXTRA_URL="imageUrl";
+    public static final String EXTRA_CREATOR="creatorName";
+    public static final String EXTRA_Likes="likeCount";
 
     private RecyclerView mRecyclerView;
     private Adapter mAdapter;
@@ -80,6 +85,7 @@ public class MainActivity extends AppCompatActivity {
 
                     mAdapter=new Adapter(MainActivity.this,mExampleList);
                     mRecyclerView.setAdapter(mAdapter);
+                    mAdapter.setOnItemClickListener(MainActivity.this);
 
                 } catch (JSONException e) {
                     e.printStackTrace();
@@ -94,6 +100,20 @@ public class MainActivity extends AppCompatActivity {
         });
 
         mRequestQueue.add(request);
+    }
+
+    @Override
+    public void onItemClick(int position) {
+        Intent datailIntent=new Intent(this,Second_Activity.class);
+        ExampleItems clickedItem=mExampleList.get(position);
+
+        datailIntent.putExtra(EXTRA_URL,clickedItem.getImageUrl());
+        datailIntent.putExtra(EXTRA_CREATOR,clickedItem.getCreator());
+        datailIntent.putExtra(EXTRA_Likes,clickedItem.getLikes());
+
+        startActivity(datailIntent);
+
+
     }
 }
 
