@@ -64,7 +64,8 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ExampleViewHolder> {
     }
 
     @Override
-    public int getItemCount() {
+    public int getItemCount()
+    {
         return mExampleList.size();
     }
 
@@ -82,6 +83,8 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ExampleViewHolder> {
             mImageView=itemView.findViewById(R.id.image_view);
             mTextViewCreator=itemView.findViewById(R.id.text_view_creator);
             mTextViewLikes=itemView.findViewById(R.id.text_view_like);
+
+
 
             itemView.setOnClickListener(new View.OnClickListener(){
 

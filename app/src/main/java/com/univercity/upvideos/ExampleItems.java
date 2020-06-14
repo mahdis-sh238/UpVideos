@@ -4,11 +4,16 @@ public class ExampleItems {
     private String mImageUrl;
     private String mCreator;
     private int mlikes;
-
-    public ExampleItems(String imageUrl, String creator, int likes) {
+    //
+    private String mYear;
+    private String mSummery;
+    //
+    public ExampleItems(String imageUrl, String creator, int likes, String mYear, String mSummery) {
         mImageUrl = imageUrl;
         mCreator = creator;
         mlikes = likes;
+        this.mYear = mYear;
+        this.mSummery = mSummery;
     }
 
     public String getImageUrl() {
@@ -24,4 +29,14 @@ public class ExampleItems {
         return mlikes;
     }
 
+
+    //
+    public String getmSummery() {
+        return mSummery;
+    }
+
+    public String getYear() {
+        return mYear;
+    }
+    //
 }

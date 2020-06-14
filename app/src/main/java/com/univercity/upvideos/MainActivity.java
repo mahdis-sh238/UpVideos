@@ -25,6 +25,10 @@ public class MainActivity extends AppCompatActivity implements Adapter.OnItemCli
     public static final String EXTRA_URL="imageUrl";
     public static final String EXTRA_CREATOR="creatorName";
     public static final String EXTRA_Likes="likeCount";
+    //
+    public static final String EXTRA_YEAR="year";
+    public static final String EXTRA_SUMMERY="summery";
+    //
 
     private RecyclerView mRecyclerView;
     private Adapter mAdapter;
@@ -80,7 +84,12 @@ public class MainActivity extends AppCompatActivity implements Adapter.OnItemCli
                         imageUrl=url_Image+imageUrl+Api_Key;
                         int likeCount=res.getInt("vote_count");
 
-                        mExampleList.add(new ExampleItems(imageUrl,CreatorName,likeCount));
+                        //
+                        String summery=res.getString("overview");
+                        String year=res.getString("release_date");
+                        //
+
+                        mExampleList.add(new ExampleItems(imageUrl,CreatorName,likeCount,year, summery ));
                     }
 
                     mAdapter=new Adapter(MainActivity.this,mExampleList);
@@ -110,6 +119,10 @@ public class MainActivity extends AppCompatActivity implements Adapter.OnItemCli
         datailIntent.putExtra(EXTRA_URL,clickedItem.getImageUrl());
         datailIntent.putExtra(EXTRA_CREATOR,clickedItem.getCreator());
         datailIntent.putExtra(EXTRA_Likes,clickedItem.getLikes());
+        //
+        datailIntent.putExtra(EXTRA_YEAR,clickedItem.getYear());
+        datailIntent.putExtra(EXTRA_SUMMERY,clickedItem.getmSummery());
+        //
 
         startActivity(datailIntent);
 

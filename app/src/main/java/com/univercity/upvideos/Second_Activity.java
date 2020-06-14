@@ -21,7 +21,9 @@ import org.json.JSONObject;
 
 import static com.univercity.upvideos.MainActivity.EXTRA_CREATOR;
 import static com.univercity.upvideos.MainActivity.EXTRA_Likes;
+import static com.univercity.upvideos.MainActivity.EXTRA_SUMMERY;
 import static com.univercity.upvideos.MainActivity.EXTRA_URL;
+import static com.univercity.upvideos.MainActivity.EXTRA_YEAR;
 
 public class Second_Activity extends AppCompatActivity {
 
@@ -35,14 +37,27 @@ public class Second_Activity extends AppCompatActivity {
         String imageUrl = intent.getStringExtra( EXTRA_URL );
         String creatorName = intent.getStringExtra( EXTRA_CREATOR );
         int likeCount = intent.getIntExtra( EXTRA_Likes, 0 );
+        //
+            String year=intent.getStringExtra(EXTRA_YEAR);
+            String summery=intent.getStringExtra(EXTRA_SUMMERY);
+        //
 
         ImageView imageView = findViewById( R.id.image_View_Detail );
         TextView textViewCreator = findViewById( R.id.tv_director );
         TextView textViewLikes = findViewById( R.id.tv_dir );
+        //
+            TextView textViewYear=findViewById( R.id.tv_year_Movie );
+            TextView textViewSummery=findViewById( R.id.tv_summery );
+            //
 
         Picasso.with( this ).load( imageUrl ).fit().centerInside().into( imageView );
         textViewCreator.setText( creatorName );
         textViewLikes.setText( "like : " + likeCount );
+
+        //
+            textViewYear.setText(year);
+            textViewSummery.setText(summery);
+        //
 
 
     }
