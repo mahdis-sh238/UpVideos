@@ -28,6 +28,8 @@ public class MainActivity extends AppCompatActivity implements Adapter.OnItemCli
     //
     public static final String EXTRA_YEAR="year";
     public static final String EXTRA_SUMMERY="summery";
+    public static final String EXTRA_LANG="lang";
+    public static final String EXTRA_IMG="B_img";
     //
 
     private RecyclerView mRecyclerView;
@@ -87,9 +89,12 @@ public class MainActivity extends AppCompatActivity implements Adapter.OnItemCli
                         //
                         String summery=res.getString("overview");
                         String year=res.getString("release_date");
+                        String lang=res.getString("original_language");
+                        String B_img=res.getString("backdrop_path");
+                        B_img=url_Image+B_img+Api_Key;
                         //
 
-                        mExampleList.add(new ExampleItems(imageUrl,CreatorName,likeCount,year, summery ));
+                        mExampleList.add(new ExampleItems(imageUrl,CreatorName,likeCount,year, summery,lang,B_img ));
                     }
 
                     mAdapter=new Adapter(MainActivity.this,mExampleList);
@@ -121,7 +126,9 @@ public class MainActivity extends AppCompatActivity implements Adapter.OnItemCli
         datailIntent.putExtra(EXTRA_Likes,clickedItem.getLikes());
         //
         datailIntent.putExtra(EXTRA_YEAR,clickedItem.getYear());
-        datailIntent.putExtra(EXTRA_SUMMERY,clickedItem.getmSummery());
+        datailIntent.putExtra(EXTRA_SUMMERY,clickedItem.getSummery());
+        datailIntent.putExtra(EXTRA_LANG,clickedItem.getLang());
+        datailIntent.putExtra( EXTRA_IMG,clickedItem.getBimg());
         //
 
         startActivity(datailIntent);

@@ -20,6 +20,8 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import static com.univercity.upvideos.MainActivity.EXTRA_CREATOR;
+import static com.univercity.upvideos.MainActivity.EXTRA_IMG;
+import static com.univercity.upvideos.MainActivity.EXTRA_LANG;
 import static com.univercity.upvideos.MainActivity.EXTRA_Likes;
 import static com.univercity.upvideos.MainActivity.EXTRA_SUMMERY;
 import static com.univercity.upvideos.MainActivity.EXTRA_URL;
@@ -27,7 +29,6 @@ import static com.univercity.upvideos.MainActivity.EXTRA_YEAR;
 
 public class Second_Activity extends AppCompatActivity {
 
-    private RequestQueue mRequestQueue;
         @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate( savedInstanceState );
@@ -40,23 +41,30 @@ public class Second_Activity extends AppCompatActivity {
         //
             String year=intent.getStringExtra(EXTRA_YEAR);
             String summery=intent.getStringExtra(EXTRA_SUMMERY);
+            String lang=intent.getStringExtra(EXTRA_LANG);
+            String Bimg=intent.getStringExtra(EXTRA_IMG);
         //
 
         ImageView imageView = findViewById( R.id.image_View_Detail );
-        TextView textViewCreator = findViewById( R.id.tv_director );
-        TextView textViewLikes = findViewById( R.id.tv_dir );
+        TextView textViewCreator = findViewById( R.id.tv_nameMovie );
+        TextView textViewLikes = findViewById( R.id.tv_like );
         //
             TextView textViewYear=findViewById( R.id.tv_year_Movie );
             TextView textViewSummery=findViewById( R.id.tv_summery );
+            TextView textViewLang=findViewById(R.id.tv_langMovie);
+            ImageView bimageView=findViewById(R.id.background_img);
+
             //
 
         Picasso.with( this ).load( imageUrl ).fit().centerInside().into( imageView );
+        Picasso.with( this ).load( Bimg ).fit().centerInside().into( bimageView );
         textViewCreator.setText( creatorName );
         textViewLikes.setText( "like : " + likeCount );
 
         //
             textViewYear.setText(year);
             textViewSummery.setText(summery);
+            textViewLang.setText(lang);
         //
 
 

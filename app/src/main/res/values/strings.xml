@@ -4,4 +4,16 @@
     <string name="Details_Movie">rrrrrrrrrrrr</string>
     <string name="director_Movie">farhadi</string>
     <string name="Production_year">2014</string>
+    <string name="nameOfMovie">nameOfMovie</string>
+    <string name="like">Like:</string>
+    <string name="posterofmovie">posterOfMovie</string>
+    <string name="most_popular">Most Popular</string>
+    <string name="logoapp">logoApp</string>
+    <string name="lang">en</string>
+    <string name="summery">overview :</string>
+    <string name="language">language :</string>
+    <string name="production_year">Production year :</string>
+    <string name="nameMovie">name</string>
+    <string name="likee">like</string>
+    <string name="title">Title :</string>
 </resources>

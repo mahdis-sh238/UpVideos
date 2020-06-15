@@ -7,13 +7,18 @@ public class ExampleItems {
     //
     private String mYear;
     private String mSummery;
+    private String mLang;
+    private String mBimg;
+
     //
-    public ExampleItems(String imageUrl, String creator, int likes, String mYear, String mSummery) {
+    public ExampleItems(String imageUrl, String creator, int likes, String mYear, String mSummery, String mLang, String mBimg) {
         mImageUrl = imageUrl;
         mCreator = creator;
         mlikes = likes;
         this.mYear = mYear;
         this.mSummery = mSummery;
+        this.mLang = mLang;
+        this.mBimg = mBimg;
     }
 
     public String getImageUrl() {
@@ -31,12 +36,21 @@ public class ExampleItems {
 
 
     //
-    public String getmSummery() {
+    public String getSummery() {
         return mSummery;
     }
 
     public String getYear() {
         return mYear;
     }
+
+    public String getLang() {
+        return mLang;
+    }
+
+    public String getBimg() {
+        return mBimg;
+    }
+
     //
 }

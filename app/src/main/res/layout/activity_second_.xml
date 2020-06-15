@@ -1,85 +1,168 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout  xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/colorBack"
     tools:context=".MainActivity">
 
     <ImageView
-        android:id="@+id/image_View_Detail"
+        android:id="@+id/background_img"
         android:layout_width="match_parent"
-        android:layout_height="250dp"
+        android:layout_height="300dp"
+        android:layout_margin="5dp"
+        android:contentDescription="@string/todo"
+        android:src="@mipmap/ic_launcher">
+
+    </ImageView>
+
+    <ImageView
+        android:id="@+id/image_View_Detail"
+        android:layout_width="152dp"
+        android:layout_height="231dp"
         android:layout_alignParentTop="true"
-        android:layout_marginTop="0dp"
-        android:src="@mipmap/ic_launcher"
-        android:contentDescription="@string/todo">
+        android:layout_marginTop="140dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginBottom="10dp"
+        android:contentDescription="@string/todo"
+        android:src="@mipmap/ic_launcher">
+
     </ImageView>
 
     <TextView
-
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginBottom="5dp"
+        android:background="@color/colorLogo"
+        android:textColor="@color/txtColor"
         android:id="@+id/tv_summery"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/Details_Movie"
-        android:paddingLeft="20dp"
+        android:paddingLeft="18dp"
+        android:paddingRight="18dp"
+        android:textAlignment="gravity"
         android:layout_below="@id/tv_detail"
-        android:textColor="@color/colorPrimary"/>
+       />
 
     <TextView
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginTop="0dp"
+        android:layout_marginBottom="5dp"
 
-        android:id="@+id/tv_director"
+        android:background="@color/colorLogo"
+        android:textColor="@color/txtColor"
+        android:id="@+id/tv_langMovie"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/tv_dir"
-        android:paddingLeft="20dp"
-        android:text="@string/director_Movie"
-        android:textColor="@color/colorPrimary" />
+        android:layout_below="@id/tv_lang"
+        android:paddingLeft="18dp"
+        android:paddingRight="18dp"
+        android:text="@string/lang"/>
 
     <TextView
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginTop="5dp"
+        android:background="@color/colorTitle"
+        android:textColor="@color/txtTitle"
         android:id="@+id/tv_detail"
-        android:paddingLeft="10dp"
-
+        android:paddingStart="10dp"
+        android:paddingEnd="10dp"
         android:layout_width="match_parent"
-        android:layout_height="17dp"
-        android:layout_below="@id/image_View_Detail"
-        android:text="Detail :"
-        android:textColor="@color/colorPrimary"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tv_nameMovie"
+        android:text="@string/summery"
         />
 
     <TextView
-        android:id="@+id/tv_dir"
-        android:paddingLeft="10dp"
+        android:layout_marginTop="0dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:background="@color/colorTitle"
+        android:textColor="@color/txtTitle"
+        android:id="@+id/tv_lang"
+        android:paddingStart="10dp"
+        android:paddingEnd="10dp"
         android:layout_width="match_parent"
-        android:layout_height="17dp"
+        android:layout_height="wrap_content"
         android:layout_below="@id/tv_summery"
-        android:text="director :"
-        android:textColor="@color/colorPrimary"
+        android:text="@string/language"
+
         />
 
     <TextView
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginTop="0dp"
+        android:background="@color/colorTitle"
+        android:textColor="@color/txtTitle"
         android:id="@+id/tv_year"
-        android:paddingLeft="10dp"
+        android:paddingStart="10dp"
+        android:paddingEnd="10dp"
         android:layout_width="match_parent"
-        android:layout_height="17dp"
-        android:layout_below="@id/tv_director"
-        android:text="Production year :"
-        android:textColor="@color/colorPrimary"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tv_langMovie"
+        android:text="@string/production_year"
         />
 
     <TextView
 
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:background="@color/colorLogo"
+        android:textColor="@color/txtColor"
         android:id="@+id/tv_year_Movie"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/tv_year"
-        android:paddingLeft="20dp"
+        android:paddingLeft="18dp"
+        android:paddingRight="18dp"
         android:text="@string/Production_year"
-        android:textColor="@color/colorPrimary" />
-    <ProgressBar
-        android:id="@+id/progressBar"
-        android:layout_centerInParent="true"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        />
+
+    <TextView
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginTop="0dp"
+
+        android:background="@color/colorLogo"
+        android:textColor="@color/txtColor"
+        android:id="@+id/tv_nameMovie"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tv_name"
+        android:paddingLeft="18dp"
+        android:paddingRight="18dp"
+        android:text="@string/nameMovie"
+ />
+
+    <TextView
+        android:background="@color/colorAccent"
+        android:textColor="@color/txtTitle"
+        android:layout_margin="5dp"
+    android:id="@+id/tv_like"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_below="@id/tv_year_Movie"
+        android:gravity="center_horizontal"
+    android:text="@string/likee"
+    />
+
+    <TextView
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:background="@color/colorTitle"
+        android:textColor="@color/txtTitle"
+        android:id="@+id/tv_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/image_View_Detail"
+        android:paddingStart="10dp"
+        android:paddingEnd="10dp"
+        android:text="@string/title"
+         />
 
 </RelativeLayout >
