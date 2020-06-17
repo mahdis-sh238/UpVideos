@@ -26,7 +26,6 @@ public class MainActivity extends AppCompatActivity implements Adapter.OnItemCli
     public static final String EXTRA_URL="imageUrl";
     public static final String EXTRA_CREATOR="creatorName";
     public static final String EXTRA_Likes="likeCount";
-//
     public static final String EXTRA_YEAR="year";
     public static final String EXTRA_SUMMERY="summery";
     public static final String EXTRA_LANG="lang";
@@ -69,7 +68,6 @@ public class MainActivity extends AppCompatActivity implements Adapter.OnItemCli
 
    private void getData()
     {
-        //String url="https://api.themoviedb.org/3/movie/popular?api_key=0ebff7292167899387c245d3463241cd&language=en-US&page=1";
 
         Result_url="popular";
         url=Base_url+Result_url+Api_Key;
@@ -106,9 +104,6 @@ public class MainActivity extends AppCompatActivity implements Adapter.OnItemCli
                             {
                                 e.printStackTrace();
                             }
-
-
-
 
                             String likeCount=null;
                             try{
@@ -152,13 +147,10 @@ public class MainActivity extends AppCompatActivity implements Adapter.OnItemCli
                                 e.printStackTrace();
                             }
 
-                            //
-
                             mExampleList.add( new ExampleItems( imageUrl, CreatorName, likeCount, summery, lang, B_img, year ) );
                         }
 
 
-                        ///////////////
 
                         mAdapter = new Adapter( MainActivity.this, mExampleList );
                         mRecyclerView.setAdapter( mAdapter );
@@ -191,12 +183,10 @@ public class MainActivity extends AppCompatActivity implements Adapter.OnItemCli
         detailIntent.putExtra(EXTRA_URL,clickedItem.getImageUrl());
         detailIntent.putExtra(EXTRA_CREATOR,clickedItem.getCreator());
         detailIntent.putExtra(EXTRA_Likes,clickedItem.getLikes());
-//
         detailIntent.putExtra(EXTRA_YEAR,clickedItem.getYear());
         detailIntent.putExtra(EXTRA_SUMMERY,clickedItem.getSummery());
         detailIntent.putExtra(EXTRA_LANG,clickedItem.getLang());
         detailIntent.putExtra( EXTRA_IMG,clickedItem.getBimg());
-
 
         startActivity(detailIntent);
 

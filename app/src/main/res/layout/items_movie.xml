@@ -21,34 +21,35 @@
                 android:contentDescription="@string/posterofmovie"
                 android:src="@mipmap/ic_launcher" />
            </LinearLayout>
-           <LinearLayout
 
-                android:layout_width="match_parent"
-                android:layout_height="200dp"
-                android:orientation="vertical"
-               android:background="@color/colorTitle"
+    <LinearLayout
 
-               android:layout_marginStart="170dp">
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginStart="170dp"
+        android:background="@color/colorTitle"
 
-              <TextView
-                android:id="@+id/text_view_creator"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="5dp"
+        android:orientation="vertical">
 
-                android:text="@string/nameOfMovie"
-                android:layout_marginTop="80dp"
-                android:textColor="@color/txtTitle"
-                android:textSize="17sp" />
+        <TextView
+            android:id="@+id/text_view_creator"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
 
-               <TextView
-                   android:id="@+id/text_view_like"
-                   android:layout_width="wrap_content"
-                   android:layout_height="wrap_content"
-                   android:layout_marginTop="20dp"
-                   android:layout_marginStart="5dp"
-                   android:textColor="@color/colorLogo"
-                   android:text="@string/like" />
+            android:layout_marginTop="80dp"
+            android:text="@string/nameOfMovie"
+            android:textColor="@color/txtTitle"
+            android:textSize="17sp" />
+
+        <TextView
+            android:id="@+id/text_view_like"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="20dp"
+            android:text="@string/like"
+            android:textColor="@color/colorLogo" />
 
 
     </LinearLayout>

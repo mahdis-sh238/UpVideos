@@ -15,11 +15,10 @@ public class ExampleItems {
         mImageUrl = imageUrl;
         mCreator = creator;
         mlikes = likes;
-      //  this.mYear = mYear;
-        this.mSummery =summery;
-        this.mLang = Lang;
-        this.mBimg=Bimg;
-        this.mYear=year;
+        mSummery =summery;
+        mLang = Lang;
+        mBimg=Bimg;
+        mYear=year;
 
     }
 
@@ -31,17 +30,15 @@ public class ExampleItems {
         return mCreator;
     }
 
-  //
 
 
-    //
+
+
     public String getSummery() {
         return mSummery;
     }
 
-   // public String getYear() {
-       // return mYear;
-  //  }
+
 
     public String getLang() {
         return mLang;
@@ -56,8 +53,8 @@ public class ExampleItems {
     }
 
     public String getYear() {
-        return null;
+        return mYear;
     }
 
-    //
+
 }
