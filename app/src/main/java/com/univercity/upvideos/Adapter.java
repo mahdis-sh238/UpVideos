@@ -1,5 +1,4 @@
 package com.univercity.upvideos;
-
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -10,10 +9,8 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.bumptech.glide.Glide;
 import com.squareup.picasso.Picasso;
 
-import java.net.PortUnreachableException;
 import java.util.ArrayList;
 
 public class Adapter extends RecyclerView.Adapter<Adapter.ExampleViewHolder> {
@@ -53,13 +50,12 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ExampleViewHolder> {
 
         String imageUrl=currentItem.getImageUrl();
         String creatorName=currentItem.getCreator();
-        int likeCount=currentItem.getLikes();
+        String likeCount=currentItem.getLikes();
 
         holder.mTextViewCreator.setText(creatorName);
-        holder.mTextViewLikes.setText("Like : "+likeCount);
+        holder.mTextViewLikes.setText("Vote Count : "+likeCount);
 
-        //Glide.with(mContext).load(imageUrl).fitCenter().centerInside().into(holder.mImageView);
-        Picasso.with(mContext).load(imageUrl).fit().centerInside().into(holder.mImageView);
+        Picasso.with(mContext).load(imageUrl).placeholder(R.drawable.placeholder).fit().centerInside().into(holder.mImageView);
 
     }
 

@@ -16,4 +16,8 @@
     <string name="nameMovie">name</string>
     <string name="likee">like</string>
     <string name="title">Title :</string>
+    <string name="app_namee">UP Movies</string>
+    <string name="release_date">release_date</string>
+    <string name="release_datee">Release Date :</string>
+    <string name="year">2014</string>
 </resources>

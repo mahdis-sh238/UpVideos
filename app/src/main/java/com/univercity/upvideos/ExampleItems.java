@@ -3,22 +3,24 @@ package com.univercity.upvideos;
 public class ExampleItems {
     private String mImageUrl;
     private String mCreator;
-    private int mlikes;
-    //
+    private String mlikes;
+
     private String mYear;
     private String mSummery;
     private String mLang;
     private String mBimg;
 
-    //
-    public ExampleItems(String imageUrl, String creator, int likes, String mYear, String mSummery, String mLang, String mBimg) {
+
+    public ExampleItems(String imageUrl, String creator, String likes, String summery, String Lang, String Bimg, String year) {
         mImageUrl = imageUrl;
         mCreator = creator;
         mlikes = likes;
-        this.mYear = mYear;
-        this.mSummery = mSummery;
-        this.mLang = mLang;
-        this.mBimg = mBimg;
+      //  this.mYear = mYear;
+        this.mSummery =summery;
+        this.mLang = Lang;
+        this.mBimg=Bimg;
+        this.mYear=year;
+
     }
 
     public String getImageUrl() {
@@ -29,10 +31,7 @@ public class ExampleItems {
         return mCreator;
     }
 
-    public int getLikes()
-    {
-        return mlikes;
-    }
+  //
 
 
     //
@@ -40,9 +39,9 @@ public class ExampleItems {
         return mSummery;
     }
 
-    public String getYear() {
-        return mYear;
-    }
+   // public String getYear() {
+       // return mYear;
+  //  }
 
     public String getLang() {
         return mLang;
@@ -50,6 +49,14 @@ public class ExampleItems {
 
     public String getBimg() {
         return mBimg;
+    }
+
+    public String getLikes(){
+        return mlikes;
+    }
+
+    public String getYear() {
+        return null;
     }
 
     //

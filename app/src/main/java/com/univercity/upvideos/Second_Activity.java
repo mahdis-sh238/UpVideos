@@ -4,20 +4,12 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.android.volley.Request;
-import com.android.volley.RequestQueue;
-import com.android.volley.Response;
-import com.android.volley.VolleyError;
-import com.android.volley.toolbox.JsonObjectRequest;
+
 import com.squareup.picasso.Picasso;
 
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
 
 import static com.univercity.upvideos.MainActivity.EXTRA_CREATOR;
 import static com.univercity.upvideos.MainActivity.EXTRA_IMG;
@@ -37,7 +29,7 @@ public class Second_Activity extends AppCompatActivity {
         Intent intent = getIntent();
         String imageUrl = intent.getStringExtra( EXTRA_URL );
         String creatorName = intent.getStringExtra( EXTRA_CREATOR );
-        int likeCount = intent.getIntExtra( EXTRA_Likes, 0 );
+        String likeCount = intent.getStringExtra( EXTRA_Likes);
         //
             String year=intent.getStringExtra(EXTRA_YEAR);
             String summery=intent.getStringExtra(EXTRA_SUMMERY);
@@ -49,20 +41,21 @@ public class Second_Activity extends AppCompatActivity {
         TextView textViewCreator = findViewById( R.id.tv_nameMovie );
         TextView textViewLikes = findViewById( R.id.tv_like );
         //
-            TextView textViewYear=findViewById( R.id.tv_year_Movie );
+            TextView textViewYear=findViewById( R.id.tv_year_movie );
             TextView textViewSummery=findViewById( R.id.tv_summery );
             TextView textViewLang=findViewById(R.id.tv_langMovie);
             ImageView bimageView=findViewById(R.id.background_img);
 
             //
 
-        Picasso.with( this ).load( imageUrl ).fit().centerInside().into( imageView );
-        Picasso.with( this ).load( Bimg ).fit().centerInside().into( bimageView );
+        Picasso.with( this ).load( imageUrl ).placeholder(R.drawable.placeholder).fit().centerInside().into( imageView );
+        Picasso.with( this ).load( Bimg ).fit().placeholder(R.drawable.placeholder).centerInside().into( bimageView );
         textViewCreator.setText( creatorName );
-        textViewLikes.setText( "like : " + likeCount );
+        textViewLikes.setText("Vote Count : "+likeCount);
 
         //
-            textViewYear.setText(year);
+
+            textViewYear.setText( year );
             textViewSummery.setText(summery);
             textViewLang.setText(lang);
         //
